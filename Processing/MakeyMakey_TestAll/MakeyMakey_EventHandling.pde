@@ -1,3 +1,14 @@
+/**
+ * MakeyMakey TestAll, Event Handlers
+ * by Carlyn Maw, May 2013
+ * 
+ * This really the only page you'll NEED to drop in to your code.
+ * Comment out the function references in the cases you aren't
+ * going to use. 
+ *
+ * As is, No restriction on use.  Have fun.
+ */
+
 
 void mousePressed() {
   if (mouseButton == LEFT) {
@@ -8,10 +19,18 @@ void mousePressed() {
   }
 }
 
+//You might want to look into keyTyped if you want key repeating. 
 void keyPressed() {
 
   switch(keyCode) {
-    //http://docs.oracle.com/javase/7/docs/api/constant-values.html#java.awt.event.KeyEvent.VK_A
+     //where to find the key codes for java.
+     //http://docs.oracle.com/javase/7/docs/api/constant-values.html#java.awt.event.KeyEvent.VK_A
+     
+     //it is not ideal to do this this way, but processing doesn't 
+     //expose all the constants for use (for good reason) 
+     //but I didn't want to bother with an ascii check and two separate case statements
+    
+    
     //Front of Makey Makey  
   case 38: //UP
     mkymky_up();  
@@ -30,7 +49,7 @@ void keyPressed() {
     break;
 
     //Back of Makey Makey
-  case 87: //w, PIN D5 VK_W 
+  case 87: //w, PIN D5
     mkymky_w(); 
     break;
   case 65: //a, PIN D4
@@ -47,7 +66,7 @@ void keyPressed() {
     break;
   case 71: //g, PIN D0
     mkymky_g();
-    break;
+    break; 
   }
 }
 
